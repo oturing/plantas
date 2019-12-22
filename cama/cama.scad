@@ -1,5 +1,5 @@
-$vpr = [60,0,135];
-$vpt = [50,0,0];
+//$vpr = [60,0,135];
+//$vpt = [50,0,0];
 
 // cama gaveiteiro
 difference () {
@@ -29,7 +29,7 @@ color([0, 1, 0])
     }
 
 // tampa 1 (mais aberta)
-*color([0, 0, 1])
+color([0, 0, 1])
     translate([1,0,48])
         rotate([0, -75, 0])
             difference() {
@@ -39,7 +39,7 @@ color([0, 1, 0])
             }
 
 // tampa 2
-*color([0, 0, 1])
+color([0, 0, 1])
     translate([1,46,48])
         rotate([0, -45, 0])
             difference() {
@@ -69,17 +69,43 @@ color([1, 0, 0])
     rotate([0,90,0])
         translate([-60,87,213])
             cylinder(1, 5, 5);
+// paredes
+union() {
+    // parede interna do nicho
+    color([1, 1, 1, 0.5])
+        translate([-2,95,0])
+            cube([48, 10, 200]);
 
+    // rodapé interno do nicho
+    color([1, 1, 1])
+        translate([0, 93, 0])
+            cube([46, 2,8]);
 
-// parede do nicho
-color([0.5, 0.5, 0.5, 0.5])
-    translate([0,95,0])
-        cube([47, 10, 200]);
+    color([1, 1, 1])
+        translate([46, 93, 0])
+            cube([2, 14, 8]);
 
-color([0.5, 0.5, 0.5, 0.5])
-    translate([-10,-10,0])
-        cube([10, 115, 200]);
+    color([1, 1, 1])
+        translate([-12, 105, 0])
+            cube([58, 2, 8]);
 
-color([0.5, 0.5, 0.5, 0.5])
-    translate([0,-10,0])
-        cube([246, 10, 200]);
+    // parede do fundo
+    color([1, 1, 1, 0.5])
+        translate([-12,-12,0])
+            cube([10, 117, 200]);
+
+    // rodapé do fundo
+    color([1, 1, 1])
+        translate([-2, 0, 0])
+            cube([2, 93,8]);
+            
+    // parede externa
+    color([1, 1, 1, 0.5])
+        translate([-2,-12,0])
+            cube([251, 10, 200]);
+
+    // rodapé externo
+    color([1, 1, 1])
+        translate([0,-2, 0])
+            cube([249, 2, 8]);
+}
