@@ -1,22 +1,22 @@
 //$vpr = [60,0,135];
 //$vpt = [50,0,0];
 
-// cama gaveiteiro
+// cama gaveteiro
 difference () {
     translate([25, 0, 0])
-        cube([188, 92, 40]);
+        cube([188, 92, 38.5]);
 
     // caixa para o colchão
     translate([24, 1, 33])
         cube([192, 90, 40]);
 
     // gaveta direita
-    translate([65, 2, 8])
-        cube([55, 91, 20]);
+    translate([50, 2, 8])
+        cube([61.2, 91, 20]);
 
     // gaveta esquerda
-    translate([138, 2, 8])
-        cube([55, 91, 20]);
+    translate([133.2, 2, 8])
+        cube([61.2, 91, 20]);
 }
 
 
